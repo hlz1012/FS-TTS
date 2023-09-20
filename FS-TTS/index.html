@@ -1,0 +1,448 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML" async></script>
+    <script type="text/x-mathjax-config;executed=true">
+  window.MathJax.Hub.Config({
+      showProcessingMessages: false, //关闭js加载过程信息
+      messageStyle: "none", //不显示信息
+      jax: ["input/TeX", "output/HTML-CSS"],
+      tex2jax: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]], //行内公式选择符
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]], //段内公式选择符
+          skipTags: ["script", "noscript", "style", "textarea", "pre", "code", "a"] //避开某些标签
+      },
+      "HTML-CSS": {
+          availableFonts: ["STIX", "TeX"], //可选字体
+          showMathMenu: false //关闭右击菜单显示
+      }
+  });
+  window.MathJax.Hub.Queue(["Typeset", MathJax.Hub,document.getElementsByClassName("ck-content")]);
+</script>
+    <meta charset="utf-8">
+    <title>Audio Samples from "Unsupervised Word-Level Prosody Tagging for Controllable Speech Synthesis"</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="./bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+                /* display: inline; */
+            }
+        }
+    </style>
+</head>
+
+<!--<link href="./dist/css/bootstrap.min.css" rel="stylesheet">-->
+
+<body data-new-gr-c-s-check-loaded="14.1027.0" data-gr-ext-installed="">
+    <div class="container">
+        <center>
+            <div style="background:#EAEAEA;color:rgba(0, 0, 0, 0.579);width:1500">
+                <center>
+                    <br />
+                    <b>
+                        <font size=6>
+                            <center>Audio Samples</center>
+                        </font>
+                    </b> <br />
+                    <center>
+                        <font size=4.2>from <b>Expressive Text-to-Speech Driven by Natural Language Prompts Using Few
+                                Human
+                                Annotations
+
+                            </b></font>
+                    </center>
+                    </h1>
+                    <p class="lead">
+                        <center><i>Hanglei Zhang, Yiwei Guo, Sen Liu, Xie Chen, Kai Yu</i></center>
+                    </p>
+                    <!-- <br /> -->
+                    <p class="lead">
+                        <center><a href="mailto:op.131@sjtu.edu.cn">op.131@sjtu.edu.cn</a></center>
+                    </p>
+                    <p class="lead">
+                        <center>Shanghai Jiao Tong University, China</center>
+                    </p>
+                    <br />
+                </center>
+                <!-- <p class="lead"><center><font color='red'><b>NOTE: this page is still under construction.</b></font></center></p> -->
+            </div>
+        </center>
+        <br />
+        <b>
+            <center>
+                <font size=5>1. Style Control with Specified References</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">
+                            This part demostrates the controllability of the acoustic
+                            model with the Global Style VAE Encoder. We conditioned the VAE
+                            Encoder with references that already existed in the annotated set,
+                            and measured the extent to which the synthetic speech could convey
+                            the specified style.
+                            <br /><br />
+                            <b>Reference</b>: The annotated reference audio with the specified style.
+                            <br />
+                            <b>GT (voc.)</b>: Resynthesized ground truth recordings (from VQ acoustic features)
+                            <br />
+                            <b>TTS w/o Style</b>: Baseline acoustic model without Style Encoder
+                            <br />
+                            <b>TTS w/ Specified Style</b>: Acoustic model conditioned on specified
+                            references
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <br />
+            <table class="table" border="1" cellspacing="0">
+                <tbody>
+                    <tr>
+                        <th style="font-weight: normal">Annotation</th>
+                        <th style="font-weight: normal">Reference</th>
+                        <th style="font-weight: normal">GT (voc.)</th>
+                        <th style="font-weight: normal">TTS w/o Style</th>
+                        <th>TTS w/ Specified Style</th>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">催促、私下说话、提心吊胆的语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode019-seg080.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg071.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg071.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode019-seg080/LianLiru-ZSDFS-episode131-seg071.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">非常愤怒、威严的语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode028-seg070.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg091.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg091.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode028-seg070/LianLiru-ZSDFS-episode131-seg091.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">心疼、难受的语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode011-seg090.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg120.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg120.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode011-seg090/LianLiru-ZSDFS-episode131-seg120.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">绘声绘色、骄横、欺负人的轻浮语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode001-seg080.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg100.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg100.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode001-seg080/LianLiru-ZSDFS-episode131-seg100.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">收敛而恭敬的语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode006-seg040.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg154.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg154.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode006-seg040/LianLiru-ZSDFS-episode131-seg154.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">雄浑粗犷、自大自负、挑衅的语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode003-seg070.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg111.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg111.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode003-seg070/LianLiru-ZSDFS-episode131-seg111.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">好笑、高兴的语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode014-seg025.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg096.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg096.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode014-seg025/LianLiru-ZSDFS-episode131-seg096.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                    <tr>
+                        <td style="width:250px">诚惶诚恐、慌张的语气 </td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode031-seg070.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/eval_gt/LianLiru-ZSDFS-episode131-seg069.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg069.wav" controls=""
+                                style="width:250px;"></audio></td>
+                        <td><audio src="audio/ref/LianLiru-ZSDFS-episode031-seg070/LianLiru-ZSDFS-episode131-seg069.wav"
+                                controls="" style="width:250px;"></audio></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <br />
+        <HR align=center width=1000>
+        <b>
+            <center>
+                <font size=5>2. Free Style Control with LLM</font>
+            </center>
+        </b><br />
+        <center>
+        </center>
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">In this experiment, the TTS pipeline with Global
+                            Style VAE Encoder
+                            and LLM Prompt Selector worked together to form our FS-TTS system, and we evaluated the
+                            end-to-end performance of it.
+                            <br />
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+        <br />
+        <b>
+            <center>
+                <font size=3>2.1 Style Selection</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">In this case, the provided prompts were unseen style
+                            descriptions,
+                            like “I whispered conspiracy”. This requires the LLM to compare
+                            the similarities between annotated styles and prompts to retrieve the
+                            most suitable annotation, and finally guide the TTS pipeline to synthesize speeches
+                            corresponding to the descriptions.
+                            <br /><br />
+                            <b>TTS w/o Style</b>: Baseline acoustic model without Style Encoder
+                            <br />
+                            <b>TTS w/ Random Style</b>: Acoustic model conditioned by
+                            random samples.
+                            <br />
+                            <b>LLM-retrieved (FS-TTS)</b>: Our method FS-TTS, ie. acoustic model conditioned by the
+                            reference retrieved by LLM.
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                </tbody>
+                <table class="table" border="1" cellspacing="0">
+                    <tbody>
+                        <tr>
+                            <th style="font-weight: normal">Prompt</th>
+                            <th style="font-weight: normal">TTS w/o Style</th>
+                            <th style="font-weight: normal">TTS w/ Random Style</th>
+                            <th>LLM-retrieved (FS-TTS)</th>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">在病床上虚弱地说 </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg053.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg053.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-036/LianLiru-ZSDFS-episode131-seg053.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">大哭大闹地喊起来 </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-050/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">有些瑟瑟缩缩地点头回答道 </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg078.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg078.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-053/LianLiru-ZSDFS-episode131-seg078.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">略感诧异地回答 </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg067.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg067.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-030/LianLiru-ZSDFS-episode131-seg067.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">站在群众中，声音洪亮得难以置信地说道 </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-057/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">郁郁不得志地发牢骚说 </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-027/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">老战士说着他艰辛的旅程 </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-040/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td style="width:250px">犯人把刀架在人质的脖子上，对着警察们喊道
+                            </td>
+                            <td><audio src="audio/baseline/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/random/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio src="audio/eval_wav/eval-026/LianLiru-ZSDFS-episode131-seg064.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                        </tr>
+                    </tbody>
+                </table>
+        </center>
+        <br />
+        <br />
+        </center>
+        <br />
+        <b>
+            <center>
+                <font size=3>2.2 Style Inference</font>
+            </center>
+        </b><br />
+        <center>
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 100px; margin-right: 100px;">
+                <tbody>
+                    <tr>
+                        <td width="100" style="word-break:normal;">In this case, the provided prompts were new speech
+                            texts, like “Hurry
+                            up! Somebody call an ambulance!”. This requires the LLM to infer
+                            the appropriate style from the text. The LLM then matched the inferred style to retrieve the
+                            most suitable annotation, and guided the
+                            TTS pipeline to synthesize speech that aligned with the annotation
+                            and the phoneme sequences of the texts.
+                            <br /><br />
+                            <b> w/o Inferred tyle</b>: Baseline acoustic model without style condition.
+                            <br />
+                            <b> w/ Inferred tyle</b>: Acoustic model conditioned by
+                            reference style inferred by LLM.
+                            <br />
+                            <br />
+                        </td>
+                    </tr>
+                </tbody>
+                <table class="table" style="width:10%">
+                    <tbody>
+                        <tr>
+                            <td>Surprise</td>
+                            <td><audio src="./audio/intensity/Surprise/0.0/[spk_4]-[emo_2]0011-Angry_000369.wav"
+                                    controls="" style="width:250px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Surprise/0.2/[spk_4]-[emo_2(0.8)_4(0.2)]0011-Angry_000369.wav"
+                                    controls="" style="width:250px;"></audio></td>
+                        </tr>
+                        <tr>
+                            <td>Sad</td>
+                            <td><audio src="./audio/intensity/Sad/0.0/[spk_4]-[emo_2]0011-Angry_000365.wav" controls=""
+                                    style="width:250px;"></audio></td>
+                            <td><audio
+                                    src="./audio/intensity/Sad/0.2/[spk_4]-[emo_2(0.8)_3(0.19999999999999996)]0011-Angry_000365.wav"
+                                    controls="" style="width:250px;"></audio></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+        </center>
+
+
+
+
+        <!-- <HR align=center width=1000>
+        <br />
+        <center>
+            <b>
+                <center>
+                    <font size=5>Citation</font>
+                </center>
+            </b><br />
+            <table class="table" style="width: 50%; max-width: 50%;margin-left: 50px; margin-right: 50px;">
+                <tbody>
+                    <tr>
+                        <td width="50" style="word-break:normal;" bgcolor="#F8F8F8">
+                            <code>
+                    @inproceedings{guo2023emodiff,<br/>
+                        &nbsp&nbsp&nbsp&nbsp title={Emodiff: Intensity controllable emotional text-to-speech with soft-label guidance},<br/>
+                        &nbsp&nbsp&nbsp&nbsp author={Guo, Yiwei and Du, Chenpeng and Chen, Xie and Yu, Kai},<br/>
+                        &nbsp&nbsp&nbsp&nbsp booktitle={ICASSP 2023-2023 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},<br/>
+                        &nbsp&nbsp&nbsp&nbsp year={2023},<br/>
+                        &nbsp&nbsp&nbsp&nbsp organization={IEEE}<br/>
+                      }
+                </code>
+                            <!-- $\mathbf e$ -->
+        </td>
+        </tr>
+        </tbody>
+        </table>
+
+        </table>
+        </center> -->
+
+    </div>
+    <br />
+    <br />
+</body>
+<style id="stylish-2" class="stylish" type="text/css">
+    #notebook-container * {
+
+        font-family: "Times New Roman", "宋体"
+
+    }
+</style>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
